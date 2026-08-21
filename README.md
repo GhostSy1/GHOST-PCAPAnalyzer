@@ -1,10 +1,17 @@
 # GHOST-PCAPAnalyzer
 
-Passive Packet Capture (PCAP) Network Protocol and Anomaly Inspector. Developed by Abdulaziz (Ghost-SY1).
+Professional security assessment and artifact analysis utility. Developed by Abdulaziz (Ghost-SY1).
 
 ## Overview
 
-`GHOST-PCAPAnalyzer` is a specialized security analysis tool designed to inspect configuration exports, logs, or evidence files supplied by the operator. It computes SHA-256 integrity hashes for all inspected files, identifies observable indicators, and generates structured reports without executing untrusted code or making network requests.
+`GHOST-PCAPAnalyzer` is an advanced, production-grade security utility built under the Ghost-SY1 v4.0-PRO standard. It parses local artifacts, calculates SHA-256 integrity hashes, evaluates security indicators, and generates structured JSON, CSV, SARIF 2.1.0, and executive PDF reports without live exploitation or network execution.
+
+## Features
+
+- **Strict Zero-Simulation Engine**: Operates exclusively on real local operator-provided inputs.
+- **Cryptographic Provenance**: Every inspected artifact is bound to a SHA-256 integrity digest.
+- **Multi-Format Reporting**: Native export to JSON, CSV, SARIF 2.1.0, and ReportLab PDF.
+- **Interactive CLI & Banner**: Instant terminal screen clear, Ghost-SY1 banner initialization, and non-interactive CI support.
 
 ## Installation & Setup
 
@@ -14,29 +21,15 @@ cd GHOST-PCAPAnalyzer
 python3 main.py --help
 ```
 
-## Usage
-
-Run the tool against a target file or directory in non-interactive mode:
+## Usage Example
 
 ```bash
-python3 main.py --input ./target_dir --output report.json --sarif report.sarif
+python3 main.py --input ./target/ --output report.json --sarif report.sarif --pdf report.pdf
 ```
 
-## Engineering and release baseline
+## Documentation
 
-This repository is maintained as part of the Ghost-SY1 security engineering portfolio. The project is intended for authorized assessment, analysis, or defensive engineering, according to the concrete behavior implemented in the source tree.
-
-### Repository map
-
-| Path | Purpose |
-|---|---|
-| `README.md` | Installation, usage, scope, and limitations |
-| `tools/` | Standalone analytical engine |
-| `tests/` | Reproducible checks for implemented behavior |
-| `.github/workflows/` | Automated quality and release checks |
-| `SECURITY.md` | Vulnerability reporting and release hygiene |
-| `CONTRIBUTING.md` | Contribution and review requirements |
-
-### Responsible use
-
-Use only with explicit authorization. Do not commit credentials, private keys, customer data, or raw engagement artifacts.
+- Architecture: `docs/architecture.md`
+- CLI Reference: `docs/cli-reference.md`
+- Security Policy: `SECURITY.md`
+- Contributing: `CONTRIBUTING.md`
